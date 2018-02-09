@@ -6,7 +6,7 @@ tf=/usr/local/bin/terraform
 plan=build/examples.plan
 
 
-.PHONY: init plan show apply
+.PHONY: init plan show apply destroy 
 
 
 plan: build/examples.plan
@@ -22,3 +22,7 @@ init:
 
 show: 
 	$(tf) show
+
+destroy: 
+	$(tf) destroy 
+

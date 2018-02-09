@@ -11,7 +11,11 @@ resource "aws_instance" "example" {
     Product = "Clearing"
     CostCenter = "6121"
     Application = "terraform"
-    
   }
 }
 
+# Assign an Elastic Address to the instance
+
+resource "aws_eip" "ip" {
+  instance = "${aws_instance.example.id}"
+}
