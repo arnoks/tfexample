@@ -2,3 +2,5 @@ build
 *~
 terraform.*
 .terraform
+*.log
+init
