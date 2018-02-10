@@ -7,6 +7,7 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = "ami-1b2bb774"
   instance_type = "t2.micro"
+  key_name = "clearing-vn401-sbox-euc1"
    tags {
     Product = "Clearing"
     CostCenter = "6121"
