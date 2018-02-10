@@ -7,7 +7,7 @@ touch = /bin/touch
 plan=build/examples.plan
 
 
-.PHONY: plan show apply destroy
+.PHONY: plan show apply destroy log
 
 
 plan: build/examples.plan

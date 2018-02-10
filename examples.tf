@@ -13,6 +13,7 @@ resource "aws_instance" "example" {
     CostCenter = "6121"
     Application = "terraform"
   }
+  depends_on = [ "aws_s3_bucket.ex1bucket" ]
 }
 
 # Assign an Elastic Address to the instance
