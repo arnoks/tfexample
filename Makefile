@@ -1,12 +1,13 @@
 #Programms:
 tf=/usr/local/bin/terraform
+touch = /bin/touch
 
 #targets
 
 plan=build/examples.plan
 
 
-.PHONY: init plan show apply destroy 
+.PHONY: plan show apply destroy
 
 
 plan: build/examples.plan
@@ -17,12 +18,16 @@ $(plan): examples.tf
 apply:
 	$(tf) apply $(plan)
 
-init: 
+init: init
 	$(tf) init
+	$(touch) init
 
-show: 
+show:
 	$(tf) show
 
-destroy: 
-	$(tf) destroy 
+log:
+	$(tf) show >> examples.log
 
+
+destroy:
+	$(tf) destroy
