@@ -16,18 +16,6 @@ resource "aws_instance" "example" {
   depends_on = [ "aws_s3_bucket.ex1bucket" ]
 }
 
-resource "aws_instance" "another" {
-  # Latest Amazon AMI V2
-  ami           = "ami-1b2bb774"
-  instance_type = "t2.micro"
-  key_name = "clearing-vn401-sbox-euc1"
-  tags {
-    Product = "Clearing"
-    CostCenter = "6121"
-    Application = "terraform"
-  }
-}
-
 
 # Assign an Elastic Address to the instance
 
