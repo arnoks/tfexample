@@ -7,7 +7,7 @@ touch = /bin/touch
 plan=build/examples.plan
 
 
-.PHONY: plan show apply destroy log
+.PHONY: plan show apply destroy log X11
 
 
 plan: build/examples.plan
@@ -28,6 +28,11 @@ show:
 log:
 	$(tf) show >> examples.log
 
-
 destroy:
 	$(tf) destroy
+
+graph: examples.tf ex1bucket.tf
+	$(tf) graph > graph.dot
+
+X11: graph.dot
+	dot -Tx11 graph.dot
