@@ -4,9 +4,6 @@ provider "aws" {
   region     = "eu-central-1"
 }
 
-resource "aws_security_group" "StandardSecurity" {
-  name = "default"
-}
 
 resource "aws_instance" "example" {
   ami           = "ami-1b2bb774"
